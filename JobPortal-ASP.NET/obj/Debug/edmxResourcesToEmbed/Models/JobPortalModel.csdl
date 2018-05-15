@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="JPDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="JobApplication">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Candidate" Type="Int32" Nullable="false" />
+    <Property Name="ListingId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Listing" Relationship="Self.FK_JobApplication_Listing" FromRole="JobApplication" ToRole="Listing" />
+    <NavigationProperty Name="User" Relationship="Self.FK_JobApplication_User" FromRole="JobApplication" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Listing">
+    <Key>
+      <PropertyRef Name="ListingId" />
+    </Key>
+    <Property Name="ListingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ListingDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ListedDate" Type="DateTime" Precision="3" />
+    <Property Name="GpaRequirement" Type="Double" />
+    <Property Name="ExperienceRequirement" Type="Double" />
+    <Property Name="OpenToAll" Type="Int32" />
+    <Property Name="ListingTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AgeRequirement" Type="Double" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="JobApplications" Relationship="Self.FK_JobApplication_Listing" FromRole="Listing" ToRole="JobApplication" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Listing_User" FromRole="Listing" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sender" Type="Int32" Nullable="false" />
+    <Property Name="Receiver" Type="Int32" Nullable="false" />
+    <Property Name="MessageBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MessageTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MessageTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Message_User" FromRole="Message" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="Self.FK_Message_User_1" FromRole="Message" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gpa" Type="Double" />
+    <Property Name="Age" Type="Double" />
+    <Property Name="Experience" Type="Double" />
+    <NavigationProperty Name="JobApplications" Relationship="Self.FK_JobApplication_User" FromRole="User" ToRole="JobApplication" />
+    <NavigationProperty Name="Listings" Relationship="Self.FK_Listing_User" FromRole="User" ToRole="Listing" />
+    <NavigationProperty Name="Messages" Relationship="Self.FK_Message_User" FromRole="User" ToRole="Message" />
+    <NavigationProperty Name="Messages1" Relationship="Self.FK_Message_User_1" FromRole="User" ToRole="Message" />
+  </EntityType>
+  <Association Name="FK_JobApplication_Listing">
+    <End Role="Listing" Type="Self.Listing" Multiplicity="1" />
+    <End Role="JobApplication" Type="Self.JobApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Listing">
+        <PropertyRef Name="ListingId" />
+      </Principal>
+      <Dependent Role="JobApplication">
+        <PropertyRef Name="ListingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobApplication_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="JobApplication" Type="Self.JobApplication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="JobApplication">
+        <PropertyRef Name="Candidate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Listing_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Sender" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_User_1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Message" Type="Self.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="Receiver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="JPDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="JobApplications" EntityType="Self.JobApplication" />
+    <EntitySet Name="Listings" EntityType="Self.Listing" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_JobApplication_Listing" Association="Self.FK_JobApplication_Listing">
+      <End Role="Listing" EntitySet="Listings" />
+      <End Role="JobApplication" EntitySet="JobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobApplication_User" Association="Self.FK_JobApplication_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="JobApplication" EntitySet="JobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Listing_User" Association="Self.FK_Listing_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Listing" EntitySet="Listings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_User" Association="Self.FK_Message_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_User_1" Association="Self.FK_Message_User_1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

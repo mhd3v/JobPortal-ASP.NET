@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Admin Panel Login</h2>
+
+@using (Html.BeginForm("Dashboard", "Admin", FormMethod.Post)) {
+
+    <label>Admin ID</label><br />
+    <input type="text" name="aId" /><br />
+
+    <label>Password</label><br />
+    <input type="password" name="pass" /><br />
+
+    <input type="submit" />
+
+    <label name="error">@ViewBag.Error</label>
+
+}
