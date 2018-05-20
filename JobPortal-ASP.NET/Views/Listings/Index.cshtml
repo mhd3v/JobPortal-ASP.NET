@@ -1,0 +1,113 @@
+﻿@model IEnumerable<JobPortal_ASP.NET.Listing>
+
+@{
+    ViewBag.Title = "Listings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #e3e6ea;
+    }
+
+    .box-div {
+        border-radius: 15px;
+        background: #eee;
+        max-width: 330px;
+        padding: 2%;
+        margin: 10% auto;
+    }
+
+    .margin {
+        margin: 10px 0 10px 0;
+    }
+</style>
+
+
+@if (ViewBag.user != null) {
+<h2>Listings</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GpaRequirement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExperienceRequirement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpenToAll)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeRequirement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GpaRequirement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExperienceRequirement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpenToAll)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeRequirement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ListingId, UserName = @ViewBag.user }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ListingId, UserName = @ViewBag.user }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ListingId, UserName = @ViewBag.user })
+        </td>
+    </tr>
+}
+
+</table>
+}  
+
+else {
+    
+<div class="container-fluid">
+
+    <div class="box-div" style="text-align:center">
+
+        <p>Login failed! <a href="~/Admin/Index">Retry</a> to view this page</p>
+
+
+    </div>
+
+</div>
+}

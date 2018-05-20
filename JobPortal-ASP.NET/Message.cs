@@ -7,18 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JobPortal_ASP.NET.Models
+namespace JobPortal_ASP.NET
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class JobApplication
+    public partial class Message
     {
-        public int ApplicationId { get; set; }
-        public int Candidate { get; set; }
-        public int ListingId { get; set; }
+        public int MessageId { get; set; }
+        public int Sender { get; set; }
+        public int Receiver { get; set; }
+        public string MessageBody { get; set; }
+        public System.DateTime MessageTime { get; set; }
+        public string MessageTitle { get; set; }
     
-        public virtual Listing Listing { get; set; }
         public virtual User User { get; set; }
+        public virtual User User1 { get; set; }
     }
 }

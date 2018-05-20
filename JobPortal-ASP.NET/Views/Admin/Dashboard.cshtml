@@ -3,11 +3,58 @@
     ViewBag.Title = "Dashboard";
 }
 
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #e3e6ea;
+    }
 
-@if (ViewBag.Id != null) {
-    <h2>Welcome @ViewBag.id</h2>
+    .box-div {
+        border-radius: 15px;
+        background: #eee;
+        max-width: 330px;
+        padding: 2%;
+        margin: 10% auto;
+    }
+
+    .margin {
+        margin: 10px 0 10px 0;
+    }
+
+</style>
+    
+
+
+
+
+@if (ViewBag.user != null) {
+    
+    <div class="container-fluid">
+
+        <div class="box-div">
+
+            <h2 style="text-align:center;">Welcome @ViewBag.user!</h2>
+
+            <button class="btn btn-primary form-control margin" onclick="location.href='@Url.Action("Index", "Users", new JobPortal_ASP.NET.Controllers.LoggedInUser { UserName = @ViewBag.user })'">Manage Users</button>
+            <button class="btn btn-primary form-control margin" onclick="location.href='@Url.Action("Index", "Listings", new JobPortal_ASP.NET.Controllers.LoggedInUser { UserName = @ViewBag.user })'">Manage Listings</button>
+            <button class="btn btn-danger form-control margin" onclick="location.href='@Url.Action("Index", "Admin", null)'">Logout</button>
+
+        </div>
+
+    </div>
 }
 
 else {
-    <h2>You're not allowed to be here</h2>
+    
+    <div class="container-fluid">
+
+        <div class="box-div" style="text-align:center">
+
+           <p>Login failed! <a href="~/Admin/Index">Retry</a> to view this page</p>
+
+
+        </div>
+
+    </div>
 }

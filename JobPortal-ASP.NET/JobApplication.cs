@@ -7,15 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JobPortal_ASP.NET.Models
+namespace JobPortal_ASP.NET
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Admin
+    public partial class JobApplication
     {
-        public int AdminId { get; set; }
-        public string AdminName { get; set; }
-        public string Password { get; set; }
+        public int ApplicationId { get; set; }
+        public int Candidate { get; set; }
+        public int ListingId { get; set; }
+    
+        public virtual Listing Listing { get; set; }
+        public virtual User User { get; set; }
     }
 }

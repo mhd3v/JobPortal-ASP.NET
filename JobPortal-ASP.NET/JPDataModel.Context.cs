@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace JobPortal_ASP.NET.Models
+namespace JobPortal_ASP.NET
 {
     using System;
     using System.Data.Entity;

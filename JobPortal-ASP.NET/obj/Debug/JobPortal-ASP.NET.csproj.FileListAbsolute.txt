@@ -19,3 +19,26 @@ c:\users\mahad\documents\visual studio 2013\Projects\JobPortal-ASP.NET\JobPortal
 c:\users\mahad\documents\visual studio 2013\Projects\JobPortal-ASP.NET\JobPortal-ASP.NET\bin\System.Web.Mvc.xml
 c:\users\mahad\documents\visual studio 2013\Projects\JobPortal-ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.dll
 c:\users\mahad\documents\visual studio 2013\Projects\JobPortal-ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.pdb
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal-ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.csprojResolveAssemblyReference.cache
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\JobPortal-ASP.NET.dll.config
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\JobPortal-ASP.NET.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\JobPortal-ASP.NET.pdb
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\EntityFramework.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\EntityFramework.SqlServer.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Helpers.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Mvc.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Razor.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.Razor.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\EntityFramework.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\EntityFramework.SqlServer.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Razor.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Webpages.Razor.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Helpers.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\bin\System.Web.Mvc.xml
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.csprojResolveAssemblyReference.cache
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.dll
+C:\Users\Mahad\Documents\Visual Studio 2013\Projects\JobPortal - ASP.NET\JobPortal-ASP.NET\obj\Debug\JobPortal-ASP.NET.pdb

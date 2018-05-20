@@ -1,5 +1,4 @@
-﻿using JobPortal_ASP.NET.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,36 +10,41 @@ namespace JobPortal_ASP.NET.Controllers
     {
 
         JPDatabaseEntities dc = new JPDatabaseEntities();
-
         // GET: Admin
        
         public ActionResult Index() {
             return View();
         }
 
-        public ActionResult Dashboard() {
+        public ActionResult Dashboard(LoggedInUser u) {
 
-            string id = Request.Form["aId"];
-            string pass = Request.Form["pass"];
-
-            var res = (from q in dc.Admins
-                       where q.AdminName == id && q.Password == pass
-                       select q).SingleOrDefault();
-
-       
-            if (res == null) {
-                
-                ViewBag.Error = "Invalid credentials!";
-                return Index();
-            }
+            if (u.UserName != null) //coming from another page (user logged in already)
+                ViewBag.user = u.UserName;
 
             else {
-                ViewBag.Id = res.AdminName;
-                return View();
+
+                string id = Request.Form["aId"];
+                string pass = Request.Form["pass"];
+
+                var res = (from q in dc.Admins
+                           where q.AdminName == id && q.Password == pass
+                           select q).SingleOrDefault();
+
+                if(res != null) 
+                    ViewBag.user = res.AdminName;
+
+                
             }
+
+            return View();
+            
                 
         }
-
+     
       
+    }
+
+    public class LoggedInUser {
+        public string UserName { get; set; }
     }
 }

@@ -1,0 +1,83 @@
+﻿@model JobPortal_ASP.NET.Listing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Listing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GpaRequirement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GpaRequirement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExperienceRequirement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExperienceRequirement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenToAll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenToAll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeRequirement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeRequirement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.UserType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ListingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

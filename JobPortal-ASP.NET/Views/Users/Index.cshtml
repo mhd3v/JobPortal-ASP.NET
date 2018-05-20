@@ -1,0 +1,101 @@
+﻿@model IEnumerable<JobPortal_ASP.NET.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #e3e6ea;
+    }
+
+    .box-div {
+        border-radius: 15px;
+        background: #eee;
+        max-width: 330px;
+        padding: 2%;
+        margin: 10% auto;
+    }
+
+    .margin {
+        margin: 10px 0 10px 0;
+    }
+</style>
+
+
+@if (ViewBag.user != null) {
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gpa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Experience)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gpa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Experience)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserId, UserName = @ViewBag.user }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UserId, UserName = @ViewBag.user }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserId, UserName = @ViewBag.user })
+        </td>
+    </tr>
+}
+
+</table>
+}
+
+else {
+    
+    <div class="container-fluid">
+
+        <div class="box-div" style="text-align:center">
+
+            <p>Login failed! <a href="~/Admin/Index">Retry</a> to view this page</p>
+
+
+        </div>
+
+    </div>
+}

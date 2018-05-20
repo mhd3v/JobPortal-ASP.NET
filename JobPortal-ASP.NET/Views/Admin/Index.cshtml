@@ -3,18 +3,55 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Admin Panel Login</h2>
-
-@using (Html.BeginForm("Dashboard", "Admin", FormMethod.Post)) {
-
-    <label>Admin ID</label><br />
-    <input type="text" name="aId" /><br />
-
-    <label>Password</label><br />
-    <input type="password" name="pass" /><br />
-
-    <input type="submit" />
-
-    <label name="error">@ViewBag.Error</label>
-
+<style>
+  body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #e3e6ea;
 }
+
+.form-signin {
+    border-radius: 15px;
+    background: #eee;
+    max-width: 330px;
+    padding: 2%;
+    margin: 10% auto;
+}
+
+input {
+    margin: 20px 0 20px 0;
+}
+
+h5{
+    margin-top:20px;
+    text-align: center;
+}
+
+
+</style>
+
+
+
+<div class="container-fluid">
+
+    <div class="form-signin">
+
+        <h2 class="form-signin-heading" style="text-align:center;">Login</h2>
+
+        @using (Html.BeginForm("Dashboard", "Admin", FormMethod.Post)) {
+
+            <label class="sr-only">Username</label>
+            <input type="text" name="aId" class="form-control" placeholder="Username" value='' required autofocus>
+
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="pass" class="form-control" placeholder="Password" required>
+
+            <input class="btn btn-primary form-control" type="submit"/><br />
+
+        }
+
+    </div>
+
+</div>
+
+
